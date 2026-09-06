@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "category": "food",
+    "question": "Which snack is the HEALTHIEST choice for your body?",
+    "choices": { "A": "French fries 🍟", "B": "Apple slices 🍎", "C": "Candy bar 🍫", "D": "Potato chips 🥔" },
+    "answer": "B",
+    "explanation": "Apples are packed with vitamins and fiber that help your body grow strong and keep you full longer!",
+    "emoji": "🍎"
+  },
+  {
+    "id": 2,
+    "category": "food",
+    "question": "What is the best drink for your body every day?",
+    "choices": { "A": "Soda 🥤", "B": "Juice box 📦", "C": "Water 💧", "D": "Chocolate milk shake 🥛" },
+    "answer": "C",
+    "explanation": "Water keeps you hydrated, helps your brain think clearly, and has ZERO sugar! Drink 6-8 glasses a day!",
+    "emoji": "💧"
+  },
+  {
+    "id": 3,
+    "category": "food",
+    "question": "Which of these is a vegetable?",
+    "choices": { "A": "Banana 🍌", "B": "Mango 🥭", "C": "Broccoli 🥦", "D": "Grape 🍇" },
+    "answer": "C",
+    "explanation": "Broccoli is a super vegetable! It's loaded with vitamins C and K that make your bones and immune system strong!",
+    "emoji": "🥦"
+  },
+  {
+    "id": 4,
+    "category": "food",
+    "question": "What is WRONG with eating fast food every day?",
+    "choices": { "A": "It tastes too good", "B": "It has too much salt, fat and sugar", "C": "It costs too little", "D": "It comes too quickly" },
+    "answer": "B",
+    "explanation": "Fast food has lots of salt, fat, and sugar that can make you feel tired and hurt your heart over time. Save it for special treats only!",
+    "emoji": "🚫"
+  },
+  {
+    "id": 5,
+    "category": "food",
+    "question": "Which breakfast gives you the BEST energy for school?",
+    "choices": { "A": "Cookies and soda", "B": "Oatmeal with fruit 🍓", "C": "Candy and chips", "D": "Nothing — skip breakfast!" },
+    "answer": "B",
+    "explanation": "Oatmeal with fruit gives you slow, steady energy all morning so your brain can focus and learn! Breakfast is the most important meal!",
+    "emoji": "🌅"
+  },
+  {
+    "id": 6,
+    "category": "food",
+    "question": "How many colors of fruits and vegetables should you try to eat each day?",
+    "choices": { "A": "Just 1 (your favorite)", "B": "2 colors", "C": "As many colors as possible 🌈", "D": "Color doesn't matter" },
+    "answer": "C",
+    "explanation": "Eating a rainbow of colors means you get different vitamins! Red, orange, yellow, green, blue — each color has special powers for your body!",
+    "emoji": "🌈"
+  },
+  {
+    "id": 7,
+    "category": "food",
+    "question": "Which is the healthiest way to cook vegetables?",
+    "choices": { "A": "Deep fry them in oil", "B": "Steam or eat them raw 🥗", "C": "Cover them in cheese sauce", "D": "Skip them completely" },
+    "answer": "B",
+    "explanation": "Steaming or eating vegetables raw keeps all the vitamins inside! Frying destroys many nutrients and adds unhealthy fat.",
+    "emoji": "🥗"
+  },
+  {
+    "id": 8,
+    "category": "food",
+    "question": "Why is eating fried food too often BAD for you?",
+    "choices": { "A": "It makes you smarter", "B": "It clogs your blood vessels with unhealthy fat", "C": "It makes you taller", "D": "It gives you superpowers" },
+    "answer": "B",
+    "explanation": "Fried food has unhealthy fat that can clog your arteries (blood pipes) over time. This makes your heart work extra hard — not good!",
+    "emoji": "❤️"
+  },
+  {
+    "id": 9,
+    "category": "food",
+    "question": "Which food has the MOST protein to help build strong muscles?",
+    "choices": { "A": "Candy 🍬", "B": "White bread", "C": "Eggs 🥚", "D": "Soda 🥤" },
+    "answer": "C",
+    "explanation": "Eggs are packed with protein! Protein is like the building blocks for your muscles. Athletes and growing kids need lots of it!",
+    "emoji": "🥚"
+  },
+  {
+    "id": 10,
+    "category": "food",
+    "question": "What should you do INSTEAD of eating when you are bored?",
+    "choices": { "A": "Eat more snacks anyway", "B": "Order fast food", "C": "Go play outside or do a fun activity 🎨", "D": "Eat while watching TV" },
+    "answer": "C",
+    "explanation": "Bored eating can lead to eating too much junk food! When bored, go play, draw, read, or do something fun. Your body will thank you!",
+    "emoji": "🎨"
+  },
+  {
+    "id": 11,
+    "category": "exercise",
+    "question": "How many minutes should kids exercise EVERY day?",
+    "choices": { "A": "5 minutes", "B": "15 minutes", "C": "60 minutes 🏃", "D": "3 hours" },
+    "answer": "C",
+    "explanation": "Kids should move their bodies for at least 60 minutes every day! It doesn't have to be all at once — playing, biking, and dancing all count!",
+    "emoji": "🏃"
+  },
+  {
+    "id": 12,
+    "category": "exercise",
+    "question": "Which activity is GREAT exercise for your heart?",
+    "choices": { "A": "Watching TV 📺", "B": "Playing video games 🎮", "C": "Swimming 🏊", "D": "Sleeping 😴" },
+    "answer": "C",
+    "explanation": "Swimming works your WHOLE body and is amazing for your heart! When your heart beats fast during exercise, it gets stronger — like a muscle!",
+    "emoji": "🏊"
+  },
+  {
+    "id": 13,
+    "category": "exercise",
+    "question": "What should you ALWAYS do before exercising?",
+    "choices": { "A": "Eat a huge meal", "B": "Warm up and stretch 🧘", "C": "Take a long nap", "D": "Drink soda" },
+    "answer": "B",
+    "explanation": "Warming up and stretching prepares your muscles so they don't get hurt! Think of it like waking your muscles up gently before asking them to work hard.",
+    "emoji": "🧘"
+  },
+  {
+    "id": 14,
+    "category": "exercise",
+    "question": "What does regular exercise do for your MOOD?",
+    "choices": { "A": "Makes you grumpy", "B": "Has no effect", "C": "Makes you happier and less stressed 😊", "D": "Makes you more tired" },
+    "answer": "C",
+    "explanation": "Exercise releases special chemicals in your brain called endorphins — they're like natural happiness pills! That's why you feel great after playing outside!",
+    "emoji": "😊"
+  },
+  {
+    "id": 15,
+    "category": "exercise",
+    "question": "Why is it important to drink water DURING exercise?",
+    "choices": { "A": "It makes you heavier", "B": "Your body loses water through sweat and needs to refill 💧", "C": "It helps you run slower", "D": "Water is only for after exercise" },
+    "answer": "B",
+    "explanation": "When you exercise you sweat — that's your body cooling itself down. You need to drink water to replace what you lost, or you'll feel dizzy and weak!",
+    "emoji": "💦"
+  },
+  {
+    "id": 16,
+    "category": "exercise",
+    "question": "Which is NOT a good exercise habit?",
+    "choices": { "A": "Walking to school 🚶", "B": "Playing at recess 🛝", "C": "Sitting on the couch all day 🛋️", "D": "Riding your bike 🚴" },
+    "answer": "C",
+    "explanation": "Sitting for hours is bad for your body! Your muscles get stiff, your energy goes down, and your heart doesn't get the workout it needs. Get moving!",
+    "emoji": "🛋️"
+  },
+  {
+    "id": 17,
+    "category": "exercise",
+    "question": "How does exercise help your BRAIN at school?",
+    "choices": { "A": "It distracts you from studying", "B": "It helps you focus and remember things better 🧠", "C": "It makes you forget everything", "D": "It has no effect on the brain" },
+    "answer": "B",
+    "explanation": "Exercise sends more blood and oxygen to your brain! Studies show kids who exercise regularly get better grades and can focus longer in class. Wow!",
+    "emoji": "🧠"
+  },
+  {
+    "id": 18,
+    "category": "exercise",
+    "question": "What kind of exercise builds STRONG bones?",
+    "choices": { "A": "Swimming only", "B": "Sitting quietly", "C": "Jumping, running, and playing 🦘", "D": "Watching sports on TV" },
+    "answer": "C",
+    "explanation": "Weight-bearing exercises like jumping and running put healthy stress on your bones — this makes them grow thicker and stronger! Your bones are building now!",
+    "emoji": "🦴"
+  },
+  {
+    "id": 19,
+    "category": "exercise",
+    "question": "Which sport teaches you teamwork AND exercise?",
+    "choices": { "A": "Solo video gaming", "B": "Soccer ⚽", "C": "Watching movies", "D": "Reading alone" },
+    "answer": "B",
+    "explanation": "Soccer (and most team sports) teach you to work together, communicate, and support your teammates — AND you get great exercise at the same time!",
+    "emoji": "⚽"
+  },
+  {
+    "id": 20,
+    "category": "exercise",
+    "question": "How many days a week should kids do some kind of exercise?",
+    "choices": { "A": "Only weekends", "B": "1-2 days", "C": "Every day, 7 days a week! 🌟", "D": "Only when they feel like it" },
+    "answer": "C",
+    "explanation": "Moving your body every single day is the goal! Even a walk with your family, dancing in the kitchen, or helping with yard work counts as great exercise!",
+    "emoji": "🌟"
+  },
+  {
+    "id": 21,
+    "category": "habits",
+    "question": "How many hours of sleep do elementary school kids NEED each night?",
+    "choices": { "A": "4-5 hours", "B": "6 hours", "C": "9-11 hours 😴", "D": "12+ hours" },
+    "answer": "C",
+    "explanation": "Kids need 9-11 hours of sleep! While you sleep, your brain stores memories from school and your body grows. Sleep is when the magic happens!",
+    "emoji": "😴"
+  },
+  {
+    "id": 22,
+    "category": "habits",
+    "question": "How long should you wash your hands to kill germs?",
+    "choices": { "A": "1 second — just rinse", "B": "5 seconds", "C": "20 seconds — sing Happy Birthday twice! 🎵", "D": "An hour" },
+    "answer": "C",
+    "explanation": "Washing for 20 seconds with soap kills germs that make you sick! Singing Happy Birthday twice helps you time it. Clean hands = healthy you!",
+    "emoji": "🧼"
+  },
+  {
+    "id": 23,
+    "category": "habits",
+    "question": "How often should you brush your teeth?",
+    "choices": { "A": "Once a week", "B": "Only when they look dirty", "C": "Twice a day — morning and night 🦷", "D": "Only after candy" },
+    "answer": "C",
+    "explanation": "Brushing twice a day removes germs and food that cause cavities. Healthy teeth let you eat all your healthy foods and smile your biggest smile!",
+    "emoji": "🦷"
+  },
+  {
+    "id": 24,
+    "category": "habits",
+    "question": "What is a GREAT habit to do right after school?",
+    "choices": { "A": "Watch TV for 4 hours", "B": "Finish homework first, then play 📚", "C": "Leave homework for the last minute", "D": "Forget about school work" },
+    "answer": "B",
+    "explanation": "Doing homework first means it's done when your brain is still fresh from school! Then you can relax and play without worrying about it. Smart move!",
+    "emoji": "📚"
+  },
+  {
+    "id": 25,
+    "category": "habits",
+    "question": "What is the KINDEST thing you can do for a friend who is sad?",
+    "choices": { "A": "Ignore them", "B": "Laugh at them", "C": "Listen and ask if they're okay 🤗", "D": "Tell everyone their problem" },
+    "answer": "C",
+    "explanation": "Being a good listener is one of the most powerful acts of kindness! Your friend doesn't always need solutions — sometimes they just need to feel heard and loved.",
+    "emoji": "🤗"
+  },
+  {
+    "id": 26,
+    "category": "habits",
+    "question": "What should you do with your belongings after using them?",
+    "choices": { "A": "Leave them anywhere", "B": "Put them back where they belong 🏠", "C": "Throw them on the floor", "D": "Let someone else clean up" },
+    "answer": "B",
+    "explanation": "Putting things away when you're done keeps your space clean, saves time finding things later, and shows respect for your home and family. Tidy spaces = calm mind!",
+    "emoji": "🏠"
+  },
+  {
+    "id": 27,
+    "category": "habits",
+    "question": "How can you handle feeling angry in a healthy way?",
+    "choices": { "A": "Hit someone", "B": "Yell at everyone", "C": "Take deep breaths and talk about your feelings 🌬️", "D": "Break things" },
+    "answer": "C",
+    "explanation": "Deep breathing calms your body down! When you breathe slowly, your brain can think clearly again. Then you can use your words to explain how you feel.",
+    "emoji": "🌬️"
+  },
+  {
+    "id": 28,
+    "category": "habits",
+    "question": "Why is READING for fun important?",
+    "choices": { "A": "It makes your eyes tired", "B": "It's boring and useless", "C": "It grows your vocabulary and imagination 📖", "D": "Only school books count" },
+    "answer": "C",
+    "explanation": "Every book you read teaches you new words and new ideas! Kids who read for fun score higher on tests and are more creative. Stories take you anywhere!",
+    "emoji": "📖"
+  },
+  {
+    "id": 29,
+    "category": "habits",
+    "question": "What is the best thing to do BEFORE bed to sleep well?",
+    "choices": { "A": "Play video games until midnight", "B": "Drink lots of soda", "C": "Put screens away and read or relax 🌙", "D": "Eat a big sugary snack" },
+    "answer": "C",
+    "explanation": "Screens (phones, tablets, TV) have blue light that tricks your brain into thinking it's daytime! Turning them off 30 minutes before bed helps you fall asleep faster.",
+    "emoji": "🌙"
+  },
+  {
+    "id": 30,
+    "category": "habits",
+    "question": "Why is it important to say 'please' and 'thank you'?",
+    "choices": { "A": "It wastes time", "B": "Nobody cares", "C": "It shows respect and makes people feel valued ✨", "D": "Only adults need to say it" },
+    "answer": "C",
+    "explanation": "Good manners show you respect others and are grateful for their help. People who use kind words make friends more easily and create a happier world around them!",
+    "emoji": "✨"
+  },
+  {
+    "id": 31,
+    "category": "money",
+    "question": "If you earn $10 doing chores, how much should you SAVE (30%)?",
+    "choices": { "A": "$1.00", "B": "$3.00 🐷", "C": "$5.00", "D": "$10.00 — save it all!" },
+    "answer": "B",
+    "explanation": "30% of $10 = $3.00! Save $3, and you still have $7 to spend or give. That saved $3 will grow over time into something amazing!",
+    "emoji": "🐷"
+  },
+  {
+    "id": 32,
+    "category": "money",
+    "question": "What is the DIFFERENCE between a 'need' and a 'want'?",
+    "choices": { "A": "They are the same thing", "B": "Needs are things to survive; wants are extras 🎯", "C": "Wants are more important", "D": "Needs cost more" },
+    "answer": "B",
+    "explanation": "NEEDS: food, water, shelter, clothing. WANTS: video games, candy, toys. Always pay for needs first! Then save, and use leftover money for wants.",
+    "emoji": "🎯"
+  },
+  {
+    "id": 33,
+    "category": "money",
+    "question": "You save $5 every week. How much do you have after 4 weeks?",
+    "choices": { "A": "$5", "B": "$10", "C": "$15", "D": "$20 💰" },
+    "answer": "D",
+    "explanation": "$5 × 4 weeks = $20! That's the power of saving consistently. Small amounts add up to BIG amounts over time. This is called building savings!",
+    "emoji": "💰"
+  },
+  {
+    "id": 34,
+    "category": "money",
+    "question": "What is a PIGGY BANK used for?",
+    "choices": { "A": "Decoration only", "B": "Feeding pigs", "C": "Storing and growing your savings 🐷", "D": "Playing games" },
+    "answer": "C",
+    "explanation": "A piggy bank is your first savings account! Every coin or bill you drop in is money FUTURE YOU will get to use. It teaches you to think ahead!",
+    "emoji": "🐷"
+  },
+  {
+    "id": 35,
+    "category": "money",
+    "question": "Before buying something fun, what is the SMART thing to ask yourself?",
+    "choices": { "A": "Can I eat it?", "B": "Will I still want this in a week, or is it just exciting right now? 🤔", "C": "Is it colorful?", "D": "Did my friend buy one?" },
+    "answer": "B",
+    "explanation": "Waiting before buying is called 'sleeping on it.' Often the excitement fades and you realize you didn't really need it. Your money stays in your pocket!",
+    "emoji": "🤔"
+  },
+  {
+    "id": 36,
+    "category": "money",
+    "question": "What happens to your savings over many years?",
+    "choices": { "A": "It disappears", "B": "It stays exactly the same", "C": "It GROWS — even in a bank it earns extra money called interest 📈", "D": "It shrinks" },
+    "answer": "C",
+    "explanation": "Money in a bank earns INTEREST — the bank pays you extra money just for keeping yours there! Over years, this makes your savings grow even without adding more!",
+    "emoji": "📈"
+  },
+  {
+    "id": 37,
+    "category": "money",
+    "question": "Which is the SMARTER money choice?",
+    "choices": { "A": "Spend all your money the day you get it", "B": "Buy the most expensive thing always", "C": "Save 30%, give some, and spend the rest wisely 🌟", "D": "Never spend any money ever" },
+    "answer": "C",
+    "explanation": "The golden rule: Save 30% first (pay yourself!), give a little to help others, then spend what's left on things you truly need or enjoy. Balance is key!",
+    "emoji": "🌟"
+  },
+  {
+    "id": 38,
+    "category": "money",
+    "question": "What is a BUDGET?",
+    "choices": { "A": "A type of car", "B": "A plan for how to spend and save your money 📋", "C": "A kind of food", "D": "A school subject" },
+    "answer": "B",
+    "explanation": "A budget is your money plan! It tells your money where to go instead of wondering where it went. Even kids can make a budget with their allowance!",
+    "emoji": "📋"
+  },
+  {
+    "id": 39,
+    "category": "money",
+    "question": "Why is it good to give SOME of your money to help others?",
+    "choices": { "A": "It isn't — keep all your money", "B": "Because people will like you", "C": "Helping others makes the world better AND makes you feel great 💛", "D": "Because you have to" },
+    "answer": "C",
+    "explanation": "Giving even a little — to a food bank, an animal shelter, or someone in need — creates ripples of kindness. And science shows that giving actually makes YOU happier too!",
+    "emoji": "💛"
+  },
+  {
+    "id": 40,
+    "category": "money",
+    "question": "You want a toy that costs $15. You have $8 saved. What should you do?",
+    "choices": { "A": "Cry until someone buys it", "B": "Steal it", "C": "Keep saving until you have $15 — then buy it! 💪", "D": "Give up on having it" },
+    "answer": "C",
+    "explanation": "Saving up for something you want feels AMAZING when you finally buy it! You learn patience, goal-setting, and the true value of money. That toy will feel extra special!",
+    "emoji": "💪"
+  }
+]
