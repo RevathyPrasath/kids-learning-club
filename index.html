@@ -473,6 +473,168 @@
     .score-circle::before { width: 94px; height: 94px; }
     .score-number { font-size: 1.5rem; }
   }
+
+  /* ══════════════════════════════════════
+     HUSKY OVERLAY
+  ══════════════════════════════════════ */
+  .husky-overlay {
+    position: fixed; inset: 0; z-index: 800;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    cursor: pointer;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    padding: 20px;
+    gap: 0;
+  }
+  .husky-overlay.show { opacity: 1; visibility: visible; }
+
+  .happy-bg {
+    background: radial-gradient(ellipse at 50% 55%,
+      rgba(39,174,96,0.93) 0%, rgba(22,115,58,0.96) 100%);
+  }
+  .sad-bg {
+    background: radial-gradient(ellipse at 50% 55%,
+      rgba(192,57,43,0.90) 0%, rgba(120,20,10,0.93) 100%);
+  }
+
+  /* Speech bubble */
+  .husky-speech {
+    background: white;
+    border-radius: 28px;
+    padding: 14px 32px;
+    font-size: 1.9rem;
+    font-weight: 900;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    position: relative;
+    margin-bottom: 4px;
+    animation: speechPop 0.45s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    max-width: 90vw;
+    line-height: 1.2;
+  }
+  .husky-speech::after {
+    content: '';
+    position: absolute;
+    bottom: -16px; left: 50%;
+    transform: translateX(-50%);
+    border: 9px solid transparent;
+    border-top-color: white;
+  }
+  .husky-speech.happy-speech { color: #1a7a3a; }
+  .husky-speech.sad-speech   { color: #8B0000; }
+
+  /* Figure wrapper */
+  .husky-figure { position: relative; display: flex; align-items: center; justify-content: center; }
+
+  /* ── HAPPY: jump + tail wag ── */
+  .husky-happy-wrap {
+    animation: huskyJump 1.8s cubic-bezier(0.36,0.07,0.19,0.97) forwards;
+    transform-origin: center bottom;
+    display: inline-block;
+  }
+  @keyframes huskyJump {
+    0%   { transform: translateY(0)    scaleX(1)    scaleY(1); }
+    12%  { transform: translateY(-62px) scaleX(0.94) scaleY(1.07); }
+    24%  { transform: translateY(-65px) scaleX(0.93) scaleY(1.08); }
+    38%  { transform: translateY(6px)  scaleX(1.14) scaleY(0.86); }
+    48%  { transform: translateY(-34px) scaleX(0.97) scaleY(1.04); }
+    58%  { transform: translateY(4px)  scaleX(1.09) scaleY(0.92); }
+    67%  { transform: translateY(-14px) scaleX(0.99) scaleY(1.02); }
+    76%  { transform: translateY(2px)  scaleX(1.04) scaleY(0.97); }
+    84%  { transform: translateY(-5px) scaleX(1)    scaleY(1.01); }
+    100% { transform: translateY(0)    scaleX(1)    scaleY(1); }
+  }
+
+  .happy-tail {
+    transform-box: fill-box;
+    transform-origin: 10% 90%;
+    animation: tailWag 0.28s ease-in-out infinite alternate;
+  }
+  @keyframes tailWag {
+    0%   { transform: rotate(-28deg); }
+    100% { transform: rotate(30deg); }
+  }
+
+  /* Star particles (added by JS) */
+  .star-particle {
+    position: absolute;
+    font-size: 1.6rem;
+    top: 50%; left: 50%;
+    margin: -14px 0 0 -14px;
+    animation: starFly 1.1s ease-out var(--delay, 0s) forwards;
+    pointer-events: none; z-index: 2;
+    line-height: 1;
+  }
+  @keyframes starFly {
+    0%   { transform: translate(0,0) scale(0.2) rotate(0deg);   opacity: 1; }
+    60%  { opacity: 1; }
+    100% { transform: translate(var(--tx),var(--ty)) scale(1.3) rotate(400deg); opacity: 0; }
+  }
+
+  /* ── SAD: slump + shake + tears ── */
+  .husky-sad-wrap {
+    animation: huskySlump 0.7s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+    transform-origin: center bottom;
+    display: inline-block;
+  }
+  @keyframes huskySlump {
+    0%   { transform: translateY(-10px) rotate(0deg); }
+    30%  { transform: translateY(5px)   rotate(-4deg); }
+    60%  { transform: translateY(8px)   rotate(-2deg); }
+    100% { transform: translateY(0)     rotate(0deg); }
+  }
+  .husky-sad-inner {
+    animation: sadShake 0.14s ease-in-out 4 alternate 0.8s;
+    display: inline-block;
+  }
+  @keyframes sadShake {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-7px); }
+  }
+
+  /* Tears (positioned absolutely over sad SVG) */
+  .husky-tear-wrap { position: relative; display: inline-block; }
+  .h-tear {
+    position: absolute;
+    width: 9px;
+    border-radius: 50% 50% 60% 60% / 55% 55% 45% 45%;
+    background: #64B5F6;
+    animation: tearDrop var(--dur,1.5s) ease-in var(--delay,0s) infinite;
+    opacity: 0;
+  }
+  @keyframes tearDrop {
+    0%   { transform: translateY(0);    opacity: 0.9; }
+    70%  { opacity: 0.9; }
+    100% { transform: translateY(55px); opacity: 0; }
+  }
+
+  /* ── Tap hint ── */
+  .tap-hint {
+    color: rgba(255,255,255,0.88);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 14px;
+    letter-spacing: 0.5px;
+    animation: hintPulse 1s ease-in-out infinite;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  }
+  @keyframes hintPulse {
+    0%,100% { opacity: 0.55; transform: scale(1); }
+    50%     { opacity: 1;    transform: scale(1.04); }
+  }
+
+  /* Speech pop keyframe */
+  @keyframes speechPop {
+    0%   { transform: scale(0.4) translateY(-24px); opacity: 0; }
+    65%  { transform: scale(1.1) translateY(0);     opacity: 1; }
+    100% { transform: scale(1)   translateY(0);     opacity: 1; }
+  }
+
+  @media(max-width:480px) {
+    .husky-speech { font-size: 1.4rem; padding: 12px 22px; }
+    .tap-hint { font-size: 0.9rem; }
+  }
 </style>
 </head>
 <body>
@@ -597,6 +759,200 @@
       <button class="action-btn btn-retry" id="retry-btn" onclick="retryQuiz()">🔄 Try Again!</button>
     </div>
   </div>
+</div>
+
+<!-- ════════════════ HUSKY OVERLAY ════════════════ -->
+<div id="husky-overlay" class="husky-overlay" onclick="dismissHusky()">
+
+  <div class="husky-speech" id="husky-speech">WOOF! WOOF! 🐾</div>
+
+  <div class="husky-figure" id="husky-figure">
+
+    <!-- ── HAPPY HUSKY: Standing, barking, jumping ── -->
+    <div id="husky-happy-scene" style="display:none">
+      <div class="husky-happy-wrap" id="happy-figure">
+        <svg viewBox="0 0 200 258" width="210" height="258" xmlns="http://www.w3.org/2000/svg">
+          <!-- Ground shadow (squashes on land) -->
+          <ellipse cx="104" cy="253" rx="54" ry="8" fill="rgba(0,0,0,0.16)"/>
+
+          <!-- TAIL (wagging via CSS) -->
+          <g class="happy-tail">
+            <path d="M147,173 C157,153 170,128 176,105 C180,91 172,82 162,87 C154,91 150,114 148,168"
+                  fill="#9a9a9a"/>
+            <path d="M149,170 C157,153 168,132 173,113 C176,101 170,93 162,96
+                     C155,99 152,120 151,165" fill="#d0d0d0"/>
+            <ellipse cx="170" cy="89" rx="11" ry="9" fill="#e0e0e0" transform="rotate(-22,170,89)"/>
+          </g>
+
+          <!-- BODY -->
+          <ellipse cx="98" cy="188" rx="57" ry="44" fill="#888"/>
+          <ellipse cx="98" cy="200" rx="38" ry="30" fill="#f2f2f2"/>
+          <!-- Chest patch -->
+          <ellipse cx="98" cy="162" rx="22" ry="17" fill="#f2f2f2"/>
+
+          <!-- BACK HAUNCHES -->
+          <ellipse cx="58"  cy="224" rx="18" ry="11" fill="#777" transform="rotate(-12,58,224)"/>
+          <ellipse cx="138" cy="224" rx="18" ry="11" fill="#777" transform="rotate(12,138,224)"/>
+
+          <!-- FRONT LEGS -->
+          <rect x="71"  y="208" width="20" height="38" rx="10" fill="#efefef"/>
+          <rect x="109" y="208" width="20" height="38" rx="10" fill="#efefef"/>
+          <!-- Paws -->
+          <ellipse cx="81"  cy="246" rx="14" ry="9" fill="#e2e2e2"/>
+          <ellipse cx="119" cy="246" rx="14" ry="9" fill="#e2e2e2"/>
+          <!-- Toe lines -->
+          <line x1="75"  y1="247" x2="75"  y2="243" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="81"  y1="249" x2="81"  y2="245" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="87"  y1="247" x2="87"  y2="243" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="113" y1="247" x2="113" y2="243" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="119" y1="249" x2="119" y2="245" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="125" y1="247" x2="125" y2="243" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+
+          <!-- NECK -->
+          <ellipse cx="98" cy="156" rx="30" ry="22" fill="#888"/>
+          <ellipse cx="98" cy="160" rx="20" ry="15" fill="#f2f2f2"/>
+
+          <!-- HEAD -->
+          <circle cx="100" cy="88" r="57" fill="#d5d5d5"/>
+          <!-- Dark saddle on top of head -->
+          <path d="M45,80 Q57,26 100,24 Q143,26 155,80 Q140,48 100,46 Q60,48 45,80Z" fill="#888"/>
+
+          <!-- EARS -->
+          <polygon points="60,60 42,6  88,46" fill="#888"/>
+          <polygon points="64,57 52,20 85,46" fill="#f5a0a0"/>
+          <polygon points="140,60 158,6  112,46" fill="#888"/>
+          <polygon points="136,57 148,20 115,46" fill="#f5a0a0"/>
+
+          <!-- EYE PATCHES (dark Husky mask) -->
+          <ellipse cx="78"  cy="86" rx="23" ry="20" fill="#4d4d4d"/>
+          <ellipse cx="122" cy="86" rx="23" ry="20" fill="#4d4d4d"/>
+
+          <!-- EYES – Husky ice-blue -->
+          <circle cx="78"  cy="86" r="15" fill="#5EC8F8"/>
+          <circle cx="122" cy="86" r="15" fill="#5EC8F8"/>
+          <circle cx="78"  cy="86" r="10" fill="#1A78C2"/>
+          <circle cx="122" cy="86" r="10" fill="#1A78C2"/>
+          <circle cx="76"  cy="83" r="6"  fill="#0B1B2E"/>
+          <circle cx="120" cy="83" r="6"  fill="#0B1B2E"/>
+          <!-- Shines -->
+          <circle cx="81"  cy="78" r="4"  fill="white"/>
+          <circle cx="125" cy="78" r="4"  fill="white"/>
+          <circle cx="72"  cy="91" r="2"  fill="rgba(255,255,255,0.45)"/>
+          <circle cx="116" cy="91" r="2"  fill="rgba(255,255,255,0.45)"/>
+
+          <!-- MUZZLE -->
+          <ellipse cx="100" cy="108" rx="28" ry="22" fill="#efefef"/>
+
+          <!-- NOSE -->
+          <ellipse cx="100" cy="99" rx="12" ry="8.5" fill="#1a1a1a"/>
+          <ellipse cx="97"  cy="96" rx="5"  ry="3"   fill="#444"/>
+          <ellipse cx="105" cy="95" rx="2"  ry="1.5" fill="rgba(255,255,255,0.28)"/>
+
+          <!-- OPEN BARKING MOUTH -->
+          <path d="M80,112 Q100,132 120,112 L118,120 Q100,142 82,120 Z" fill="#b03030"/>
+          <!-- Upper teeth -->
+          <path d="M82,112 L87,119 L92,112 L97,119 L102,112 L107,119 L112,112 L117,119 L118,112"
+                fill="white" stroke="#e8e8e8" stroke-width="0.8" stroke-linejoin="round"/>
+          <!-- Tongue -->
+          <ellipse cx="100" cy="130" rx="13" ry="9" fill="#FF7BAC"/>
+          <path d="M100,122 Q100,136 100,138" stroke="#e05882" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+          <!-- HAPPY BROWS (raised = excited) -->
+          <path d="M60,70 Q78,60 95,68" stroke="#444" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M105,68 Q122,60 140,70" stroke="#444" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ── SAD HUSKY: Lying down, crying ── -->
+    <div id="husky-sad-scene" style="display:none">
+      <div class="husky-sad-wrap">
+        <div class="husky-sad-inner">
+          <div class="husky-tear-wrap">
+            <!-- Tear drops layered over SVG -->
+            <div class="h-tear" style="width:10px;height:15px;left:75px;top:98px;--dur:1.3s;--delay:0.3s;background:#64B5F6;"></div>
+            <div class="h-tear" style="width:7px; height:11px;left:83px;top:100px;--dur:1.7s;--delay:1.0s;background:#90CAF9;"></div>
+            <div class="h-tear" style="width:8px; height:13px;left:69px;top:96px; --dur:2.0s;--delay:1.6s;background:#5BA8F5;"></div>
+
+            <svg viewBox="0 0 280 178" width="290" height="178" xmlns="http://www.w3.org/2000/svg">
+              <!-- Shadow -->
+              <ellipse cx="152" cy="174" rx="112" ry="9" fill="rgba(0,0,0,0.18)"/>
+
+              <!-- TAIL (drooping limp) -->
+              <path d="M234,118 C248,130 258,148 252,160 C246,172 232,170 228,160
+                       C224,150 232,134 234,118" fill="#909090"/>
+              <path d="M236,120 C248,131 256,148 250,159 C245,168 234,166 231,157
+                       C228,148 234,133 236,120" fill="#c8c8c8"/>
+
+              <!-- BODY lying horizontal -->
+              <ellipse cx="170" cy="138" rx="84" ry="35" fill="#888"/>
+              <ellipse cx="173" cy="146" rx="66" ry="25" fill="#f2f2f2"/>
+
+              <!-- BACK LEGS tucked -->
+              <ellipse cx="235" cy="158" rx="30" ry="13" fill="#777" transform="rotate(16,235,158)"/>
+              <ellipse cx="222" cy="160" rx="24" ry="11" fill="#888" transform="rotate(10,222,160)"/>
+
+              <!-- FRONT PAWS stretched forward -->
+              <rect x="60" y="148" width="56" height="20" rx="10" fill="#efefef"/>
+              <!-- Left paw -->
+              <ellipse cx="64"  cy="160" rx="13" ry="9" fill="#e0e0e0"/>
+              <!-- Right paw -->
+              <ellipse cx="110" cy="160" rx="13" ry="9" fill="#e2e2e2"/>
+              <!-- Toe lines -->
+              <line x1="59"  y1="161" x2="59"  y2="156" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="65"  y1="163" x2="65"  y2="158" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="105" y1="161" x2="105" y2="156" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="111" y1="163" x2="111" y2="158" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/>
+
+              <!-- NECK -->
+              <ellipse cx="104" cy="118" rx="28" ry="23" fill="#999" transform="rotate(-18,104,118)"/>
+              <ellipse cx="106" cy="122" rx="19" ry="15" fill="#eeeeee" transform="rotate(-18,106,122)"/>
+
+              <!-- HEAD resting on paws -->
+              <circle cx="68" cy="103" r="50" fill="#d5d5d5"/>
+              <!-- Dark top -->
+              <path d="M24,93 Q36,48 68,46 Q100,48 112,93 Q98,66 68,64 Q38,66 24,93Z" fill="#888"/>
+
+              <!-- EARS – front ear drooping -->
+              <polygon points="46,68  28,20 70,55" fill="#888" transform="rotate(8,50,50)"/>
+              <polygon points="49,66  38,30 68,55" fill="#f5a0a0" transform="rotate(8,50,50)"/>
+              <!-- Back ear -->
+              <polygon points="84,68 96,28 106,60" fill="#999"/>
+              <polygon points="86,67 97,36 105,61" fill="#c88888"/>
+
+              <!-- EYE PATCH -->
+              <ellipse cx="54" cy="99" rx="21" ry="18" fill="#4d4d4d"/>
+
+              <!-- EYE – sad, half-closed -->
+              <circle cx="54" cy="99" r="13" fill="#5EC8F8"/>
+              <circle cx="54" cy="99" r="9"  fill="#1A78C2"/>
+              <circle cx="53" cy="98" r="5"  fill="#0B1B2E"/>
+              <circle cx="57" cy="93" r="3.5" fill="white"/>
+              <!-- Drooping eyelid -->
+              <path d="M41,93 Q54,85 67,93" fill="#888" stroke="none"/>
+              <!-- Under-eye sad line -->
+              <path d="M43,107 Q54,113 65,108" stroke="#777" stroke-width="1.5" fill="none"/>
+
+              <!-- MUZZLE -->
+              <ellipse cx="32" cy="114" rx="22" ry="17" fill="#efefef"/>
+              <!-- NOSE -->
+              <ellipse cx="20" cy="107" rx="9.5" ry="6.5" fill="#1a1a1a"/>
+              <ellipse cx="18" cy="105" rx="3.5" ry="2.2" fill="#444"/>
+
+              <!-- SAD MOUTH – downturned frown -->
+              <path d="M16,120 Q30,128 44,123" stroke="#444" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+              <!-- TEAR DUCTS (static; animated tear divs sit on top via HTML) -->
+              <circle cx="68" cy="112" r="4" fill="#90CAF9" opacity="0.6"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.husky-figure -->
+
+  <div class="tap-hint">👆 Tap anywhere to continue!</div>
 </div>
 
 <script>
@@ -731,20 +1087,18 @@ function renderQuestion() {
 }
 
 function selectAnswer(chosen, q, clickedBtn) {
-  // Disable all buttons
   document.querySelectorAll('.choice-btn').forEach(b => b.disabled = true);
 
   const correct = chosen === q.answer;
   const grid = document.getElementById('choices-grid');
 
-  // Highlight buttons
   grid.querySelectorAll('.choice-btn').forEach((b, i) => {
     const letter = ['A','B','C','D'][i];
     if (letter === q.answer) b.classList.add('correct');
     if (letter === chosen && !correct) b.classList.add('wrong');
   });
 
-  // Feedback
+  // Feedback box (visible under overlay, revealed when husky dismisses)
   const fb = document.getElementById('feedback-box');
   fb.className = 'feedback-box ' + (correct ? 'correct' : 'wrong');
   fb.style.display = 'block';
@@ -757,12 +1111,95 @@ function selectAnswer(chosen, q, clickedBtn) {
   if (correct) {
     score++;
     document.getElementById('q-counter').textContent = `⭐ ${score}`;
-    launchMiniConfetti();
   }
+
+  document.getElementById('next-btn').textContent =
+    currentIndex === quizQuestions.length - 1 ? '🏆 See My Results!' : 'Next Question ➡️';
 
   streakDots.push(correct);
   userAnswers.push({ q, chosen, correct });
-  document.getElementById('next-btn').style.display = 'block';
+
+  // Show the husky; reveal Next button after it dismisses
+  showHusky(correct, () => {
+    document.getElementById('next-btn').style.display = 'block';
+    if (correct) launchMiniConfetti();
+  });
+}
+
+// ── Husky overlay ──────────────────────────────────
+let _huskyTimer    = null;
+let _huskyCallback = null;
+
+const HAPPY_WOOFS = [
+  'WOOF! WOOF! 🐾',
+  'BARK BARK! 🎉',
+  'YES! WOOF! 🌟',
+  'WOOF WOOF! ⭐'
+];
+
+function showHusky(correct, cb) {
+  _huskyCallback = cb;
+  if (_huskyTimer) { clearTimeout(_huskyTimer); _huskyTimer = null; }
+
+  const overlay  = document.getElementById('husky-overlay');
+  const speech   = document.getElementById('husky-speech');
+  const happyEl  = document.getElementById('husky-happy-scene');
+  const sadEl    = document.getElementById('husky-sad-scene');
+
+  if (correct) {
+    speech.textContent  = HAPPY_WOOFS[Math.floor(Math.random() * HAPPY_WOOFS.length)];
+    speech.className    = 'husky-speech happy-speech';
+    overlay.className   = 'husky-overlay show happy-bg';
+    happyEl.style.display = 'block';
+    sadEl.style.display   = 'none';
+    // Restart jump animation by cloning the wrapper
+    const wrap = happyEl.querySelector('.husky-happy-wrap');
+    const clone = wrap.cloneNode(true);
+    wrap.parentNode.replaceChild(clone, wrap);
+    spawnHuskyStars();
+  } else {
+    speech.textContent  = 'Awoooo... 😢';
+    speech.className    = 'husky-speech sad-speech';
+    overlay.className   = 'husky-overlay show sad-bg';
+    happyEl.style.display = 'none';
+    sadEl.style.display   = 'block';
+    // Restart sad animations
+    restartSadAnimation();
+  }
+
+  _huskyTimer = setTimeout(dismissHusky, 2800);
+}
+
+function dismissHusky() {
+  if (_huskyTimer) { clearTimeout(_huskyTimer); _huskyTimer = null; }
+  document.getElementById('husky-overlay').classList.remove('show');
+  document.querySelectorAll('.star-particle').forEach(s => s.remove());
+  if (_huskyCallback) { _huskyCallback(); _huskyCallback = null; }
+}
+
+function spawnHuskyStars() {
+  document.querySelectorAll('.star-particle').forEach(s => s.remove());
+  const fig    = document.getElementById('happy-figure');
+  const emojis = ['⭐','✨','🌟','💫','🎉','🐾','❤️','🎊'];
+  for (let i = 0; i < 9; i++) {
+    const s = document.createElement('div');
+    s.className = 'star-particle';
+    const angle = (i / 9) * 360;
+    const dist  = 85 + Math.random() * 55;
+    s.style.setProperty('--tx', Math.cos(angle * Math.PI / 180) * dist + 'px');
+    s.style.setProperty('--ty', Math.sin(angle * Math.PI / 180) * dist + 'px');
+    s.style.setProperty('--delay', (i * 0.09) + 's');
+    s.textContent = emojis[i % emojis.length];
+    fig.appendChild(s);
+  }
+}
+
+function restartSadAnimation() {
+  // Restart CSS animations on sad elements by re-cloning
+  const wrap  = document.querySelector('.husky-sad-wrap');
+  const inner = wrap.querySelector('.husky-sad-inner');
+  const cloneInner = inner.cloneNode(true);
+  inner.parentNode.replaceChild(cloneInner, inner);
 }
 
 function nextQuestion() {
