@@ -3,43 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Super Kids Learning Club! 🌟</title>
+<title>PBJTP Super Kids Learning Club! 🌟</title>
 <style>
   :root {
-    --food:    #FF6B6B;
-    --food-lt: #FFE5E5;
-    --exer:    #4ECDC4;
-    --exer-lt: #E0FAF8;
-    --habit:   #FFD93D;
-    --habit-lt:#FFF8DC;
-    --money:   #6BCB77;
-    --money-lt:#E8F8EA;
-    --purple:  #845EC2;
-    --bg:      #F0F4FF;
+    --maroon:   #7a1e32;
+    --maroon-dk:#5a1020;
+    --green:    #2d5a27;
+    --green-lt: #e8f5e4;
+    --food:    #e05c3a;
+    --food-lt: #fdf0ec;
+    --exer:    #2d5a27;
+    --exer-lt: #e8f5e4;
+    --habit:   #c8941a;
+    --habit-lt:#fdf7e4;
+    --money:   #1a6b3a;
+    --money-lt:#e4f5ec;
+    --purple:  #7a1e32;
+    --pbjtp-green: #2d5a27;
+    --bg:      #f5f5f5;
     --white:   #FFFFFF;
-    --dark:    #2D3561;
-    --radius:  20px;
-    --shadow:  0 8px 32px rgba(0,0,0,0.12);
+    --dark:    #1a1a1a;
+    --radius:  12px;
+    --shadow:  0 4px 20px rgba(0,0,0,0.10);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Segoe UI', 'Comic Sans MS', 'Chalkboard SE', Arial, sans-serif;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     background: var(--bg);
     min-height: 100vh;
     color: var(--dark);
     overflow-x: hidden;
   }
 
-  /* ── Stars background ── */
+  /* ── Subtle PBJTP background ── */
   body::before {
     content: '';
     position: fixed; inset: 0;
     background:
-      radial-gradient(circle at 10% 20%, rgba(255,215,0,0.15) 0%, transparent 40%),
-      radial-gradient(circle at 90% 80%, rgba(78,205,196,0.15) 0%, transparent 40%),
-      radial-gradient(circle at 50% 50%, rgba(132,94,194,0.08) 0%, transparent 60%);
+      radial-gradient(circle at 15% 15%, rgba(122,30,50,0.05) 0%, transparent 50%),
+      radial-gradient(circle at 85% 85%, rgba(45,90,39,0.05) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
   }
@@ -47,39 +51,75 @@
   .screen { display: none; position: relative; z-index: 1; }
   .screen.active { display: block; }
 
-  /* ── TOP HEADER ── */
+  /* ── TOP HEADER (PBJTP style) ── */
   .top-bar {
-    background: linear-gradient(135deg, #845EC2, #D65DB1);
+    background: var(--maroon);
+    color: white;
+    padding: 0 24px;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.35);
+  }
+  .top-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: 0 auto;
+    height: 72px;
+    gap: 16px;
+  }
+  .top-bar-logo {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.7);
+    flex-shrink: 0;
+    background: white;
+  }
+  .top-bar-center { flex: 1; text-align: center; }
+  .top-bar h1 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  .top-bar p { font-size: 0.78rem; opacity: 0.82; margin-top: 2px; letter-spacing: 0.3px; }
+  .top-bar-tagline {
+    background: var(--green);
     color: white;
     text-align: center;
-    padding: 16px 20px;
-    position: sticky; top: 0; z-index: 100;
-    box-shadow: 0 4px 20px rgba(132,94,194,0.4);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 20px;
+    letter-spacing: 0.5px;
   }
-  .top-bar h1 { font-size: 1.6rem; letter-spacing: 1px; }
-  .top-bar p { font-size: 0.9rem; opacity: 0.9; margin-top: 4px; }
 
   /* ── HOME SCREEN ── */
   .home-content { max-width: 900px; margin: 0 auto; padding: 30px 20px; }
   .welcome-box {
     background: white;
     border-radius: var(--radius);
-    padding: 30px;
+    padding: 32px 30px;
     text-align: center;
     box-shadow: var(--shadow);
-    margin-bottom: 30px;
-    border: 3px solid #e0e0ff;
+    margin-bottom: 28px;
+    border-top: 5px solid var(--maroon);
+    border-bottom: 3px solid var(--green);
   }
-  .welcome-box .big-emoji { font-size: 4rem; display: block; margin-bottom: 10px; animation: bounce 2s infinite; }
-  .welcome-box h2 { font-size: 1.8rem; color: var(--purple); margin-bottom: 10px; }
-  .welcome-box p { font-size: 1.1rem; color: #555; line-height: 1.6; }
+  .welcome-box .big-emoji { font-size: 3.5rem; display: block; margin-bottom: 10px; animation: bounce 2s infinite; }
+  .welcome-box h2 { font-size: 1.7rem; color: var(--maroon); margin-bottom: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+  .welcome-box p { font-size: 1rem; color: #444; line-height: 1.7; }
+  .welcome-box strong { color: var(--green); }
 
   .categories-title {
     text-align: center;
-    font-size: 1.4rem;
-    color: var(--purple);
+    font-size: 1.1rem;
+    color: var(--maroon);
     margin-bottom: 20px;
-    font-weight: bold;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
   .category-grid {
@@ -92,42 +132,32 @@
   .cat-card {
     background: white;
     border-radius: var(--radius);
-    padding: 30px 20px;
+    padding: 28px 20px;
     text-align: center;
     cursor: pointer;
     box-shadow: var(--shadow);
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 3px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    border: 2px solid #e0e0e0;
+    border-top: 5px solid var(--maroon);
     position: relative;
     overflow: hidden;
   }
-  .cat-card::before {
-    content: '';
-    position: absolute; inset: 0;
-    opacity: 0.08;
-    transition: opacity 0.2s;
-  }
-  .cat-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 16px 40px rgba(0,0,0,0.18); }
-  .cat-card:hover::before { opacity: 0.15; }
-  .cat-card:active { transform: scale(0.97); }
+  .cat-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.15); border-color: var(--maroon); }
+  .cat-card:active { transform: scale(0.98); }
 
-  .cat-card[data-cat="food"]  { border-color: var(--food);  }
-  .cat-card[data-cat="food"]::before  { background: var(--food);  }
-  .cat-card[data-cat="exercise"]      { border-color: var(--exer); }
-  .cat-card[data-cat="exercise"]::before { background: var(--exer); }
-  .cat-card[data-cat="habits"]        { border-color: var(--habit);}
-  .cat-card[data-cat="habits"]::before{ background: var(--habit); }
-  .cat-card[data-cat="money"]         { border-color: var(--money);}
-  .cat-card[data-cat="money"]::before { background: var(--money); }
+  .cat-card[data-cat="food"]     { border-top-color: var(--food); }
+  .cat-card[data-cat="exercise"] { border-top-color: var(--green); }
+  .cat-card[data-cat="habits"]   { border-top-color: var(--habit); }
+  .cat-card[data-cat="money"]    { border-top-color: var(--money); }
 
-  .cat-card .cat-emoji { font-size: 3.5rem; display: block; margin-bottom: 12px; }
-  .cat-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 6px; }
-  .cat-card p { font-size: 0.85rem; color: #666; margin-bottom: 14px; line-height: 1.4; }
+  .cat-card .cat-emoji { font-size: 3rem; display: block; margin-bottom: 10px; }
+  .cat-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .cat-card p { font-size: 0.83rem; color: #666; margin-bottom: 14px; line-height: 1.45; }
 
-  .cat-card[data-cat="food"]  h3 { color: var(--food); }
-  .cat-card[data-cat="exercise"] h3 { color: #2BB5AC; }
-  .cat-card[data-cat="habits"] h3 { color: #C8A800; }
-  .cat-card[data-cat="money"]  h3 { color: #3D9B4A; }
+  .cat-card[data-cat="food"]     h3 { color: var(--food); }
+  .cat-card[data-cat="exercise"] h3 { color: var(--green); }
+  .cat-card[data-cat="habits"]   h3 { color: var(--habit); }
+  .cat-card[data-cat="money"]    h3 { color: var(--money); }
 
   .start-btn {
     display: inline-block;
@@ -143,25 +173,25 @@
   }
   .start-btn:hover { transform: scale(1.08); filter: brightness(1.1); }
   .cat-card[data-cat="food"]     .start-btn { background: var(--food); }
-  .cat-card[data-cat="exercise"] .start-btn { background: var(--exer); }
-  .cat-card[data-cat="habits"]   .start-btn { background: var(--habit); color: #333; }
+  .cat-card[data-cat="exercise"] .start-btn { background: var(--green); }
+  .cat-card[data-cat="habits"]   .start-btn { background: var(--habit); color: #222; }
   .cat-card[data-cat="money"]    .start-btn { background: var(--money); }
 
   .score-badge {
     display: inline-block;
-    background: #f0f0ff;
+    background: #f5ebe8;
     border-radius: 50px;
     padding: 4px 12px;
     font-size: 0.8rem;
-    color: var(--purple);
+    color: var(--maroon);
     margin-bottom: 10px;
     font-weight: bold;
   }
-  .score-badge.has-score { background: #e8fff0; color: #2a7a3a; }
+  .score-badge.has-score { background: var(--green-lt); color: var(--green); }
 
   .all-btn-wrap { text-align: center; margin-top: 10px; }
   .all-start-btn {
-    background: linear-gradient(135deg, #845EC2, #D65DB1);
+    background: linear-gradient(135deg, #5a1a2e, #2d6b3e);
     color: white;
     border: none;
     padding: 16px 40px;
@@ -173,7 +203,7 @@
     box-shadow: 0 6px 20px rgba(132,94,194,0.35);
     transition: transform 0.2s, box-shadow 0.2s;
   }
-  .all-start-btn:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 10px 30px rgba(132,94,194,0.5); }
+  .all-start-btn:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 10px 30px rgba(90,26,46,0.4); }
 
   /* ── QUIZ SCREEN ── */
   .quiz-wrapper { max-width: 750px; margin: 0 auto; padding: 24px 20px; }
@@ -196,13 +226,13 @@
   .progress-bar-inner {
     height: 100%;
     border-radius: 50px;
-    background: linear-gradient(90deg, #845EC2, #D65DB1);
+    background: linear-gradient(90deg, #5a1a2e, #2d6b3e);
     transition: width 0.4s ease;
   }
   .q-counter {
     font-size: 1rem;
     font-weight: bold;
-    color: var(--purple);
+    color: var(--maroon);
     white-space: nowrap;
   }
   .back-btn {
@@ -216,7 +246,7 @@
     color: #555;
     transition: border-color 0.2s;
   }
-  .back-btn:hover { border-color: var(--purple); color: var(--purple); }
+  .back-btn:hover { border-color: var(--maroon); color: var(--maroon); }
 
   .question-card {
     background: white;
@@ -224,11 +254,11 @@
     padding: 30px;
     box-shadow: var(--shadow);
     margin-bottom: 20px;
-    border-top: 6px solid var(--purple);
+    border-top: 6px solid var(--maroon);
     animation: slideIn 0.3s ease;
   }
   .question-card.food    { border-top-color: var(--food); }
-  .question-card.exercise{ border-top-color: var(--exer); }
+  .question-card.exercise{ border-top-color: var(--green); }
   .question-card.habits  { border-top-color: var(--habit); }
   .question-card.money   { border-top-color: var(--money); }
 
@@ -243,8 +273,8 @@
     color: white;
   }
   .q-cat-tag.food    { background: var(--food); }
-  .q-cat-tag.exercise{ background: var(--exer); }
-  .q-cat-tag.habits  { background: var(--habit); color: #333; }
+  .q-cat-tag.exercise{ background: var(--green); }
+  .q-cat-tag.habits  { background: var(--habit); color: #222; }
   .q-cat-tag.money   { background: var(--money); }
 
   .question-text { font-size: 1.3rem; font-weight: 700; line-height: 1.5; color: var(--dark); }
@@ -274,9 +304,9 @@
     align-items: flex-start;
     gap: 10px;
   }
-  .choice-btn:hover:not(:disabled) { background: #eeeefc; border-color: var(--purple); transform: scale(1.02); }
+  .choice-btn:hover:not(:disabled) { background: #f5ebe8; border-color: var(--maroon); transform: scale(1.02); }
   .choice-letter {
-    background: var(--purple);
+    background: var(--maroon);
     color: white;
     border-radius: 50%;
     width: 28px; height: 28px;
@@ -310,7 +340,7 @@
   .next-btn {
     display: block;
     margin: 20px auto 0;
-    background: linear-gradient(135deg, #845EC2, #D65DB1);
+    background: linear-gradient(135deg, #5a1a2e, #2d6b3e);
     color: white;
     border: none;
     border-radius: 50px;
@@ -323,7 +353,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
     display: none;
   }
-  .next-btn:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 8px 24px rgba(132,94,194,0.5); }
+  .next-btn:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 8px 24px rgba(45,107,62,0.4); }
 
   /* ── RESULTS SCREEN ── */
   .results-wrapper { max-width: 750px; margin: 0 auto; padding: 30px 20px; }
@@ -341,16 +371,16 @@
   .results-hero::before {
     content: '';
     position: absolute; top: 0; left: 0; right: 0; height: 8px;
-    background: linear-gradient(90deg, #FF6B6B, #FFD93D, #4ECDC4, #6BCB77, #845EC2);
+    background: linear-gradient(90deg, var(--maroon) 0%, var(--green) 50%, var(--maroon) 100%);
   }
   .results-emoji { font-size: 5rem; display: block; margin-bottom: 16px; }
-  .results-title { font-size: 2rem; font-weight: 900; color: var(--purple); margin-bottom: 8px; }
+  .results-title { font-size: 2rem; font-weight: 900; color: var(--maroon); margin-bottom: 8px; text-transform: uppercase; }
   .results-subtitle { font-size: 1.1rem; color: #666; margin-bottom: 24px; }
 
   .score-circle {
     width: 140px; height: 140px;
     border-radius: 50%;
-    background: conic-gradient(var(--purple) var(--pct), #e0e0f0 var(--pct));
+    background: conic-gradient(var(--maroon) var(--pct), #e0e0e0 var(--pct));
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto 20px;
     position: relative;
@@ -364,7 +394,7 @@
   }
   .score-number {
     position: relative; z-index: 1;
-    font-size: 1.8rem; font-weight: 900; color: var(--purple); text-align: center;
+    font-size: 1.8rem; font-weight: 900; color: var(--maroon); text-align: center;
   }
   .score-number span { display: block; font-size: 0.75rem; font-weight: 600; color: #888; }
 
@@ -372,12 +402,12 @@
     display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px;
   }
   .stat-pill {
-    background: #f0f0ff;
+    background: #f5ebe8;
     border-radius: 50px;
     padding: 8px 20px;
     font-size: 0.95rem;
     font-weight: bold;
-    color: var(--purple);
+    color: var(--maroon);
   }
 
   .review-section { margin-bottom: 24px; }
@@ -411,8 +441,8 @@
     transition: transform 0.2s, box-shadow 0.2s;
   }
   .action-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
-  .btn-home  { background: white; border: 3px solid var(--purple); color: var(--purple); }
-  .btn-retry { background: linear-gradient(135deg, #845EC2, #D65DB1); color: white; }
+  .btn-home  { background: white; border: 3px solid var(--pbjtp-green); color: var(--pbjtp-green); }
+  .btn-retry { background: linear-gradient(135deg, #5a1a2e, #2d6b3e); color: white; }
 
   /* ── CONFETTI ── */
   .confetti-piece {
@@ -491,11 +521,11 @@
 
   .happy-bg {
     background: radial-gradient(ellipse at 50% 55%,
-      rgba(39,174,96,0.93) 0%, rgba(22,115,58,0.96) 100%);
+      rgba(45,90,39,0.95) 0%, rgba(25,60,22,0.97) 100%);
   }
   .sad-bg {
     background: radial-gradient(ellipse at 50% 55%,
-      rgba(192,57,43,0.90) 0%, rgba(120,20,10,0.93) 100%);
+      rgba(122,30,50,0.93) 0%, rgba(80,10,25,0.96) 100%);
   }
 
   /* Speech bubble */
@@ -641,18 +671,25 @@
 
 <!-- ════════════════ TOP BAR ════════════════ -->
 <div class="top-bar">
-  <h1>🌟 Super Kids Learning Club! 🌟</h1>
-  <p>Learn smart habits for a healthy, happy life!</p>
+  <div class="top-bar-inner">
+    <img src="pbjtp.webp" alt="PBJTP Logo" class="top-bar-logo">
+    <div class="top-bar-center">
+      <h1>PBJTP Super Kids Learning Club</h1>
+      <p>Pete Brown Jr. Tennis Program</p>
+    </div>
+    <img src="pbjtp.webp" alt="PBJTP Logo" class="top-bar-logo">
+  </div>
 </div>
+<div class="top-bar-tagline">🌟 Learn Healthy Habits · Exercise · Good Money Skills · Be Your Best Self! 🌟</div>
 
 <!-- ════════════════ HOME SCREEN ════════════════ -->
 <div id="home-screen" class="screen active">
   <div class="home-content">
 
     <div class="welcome-box">
-      <span class="big-emoji">🦸</span>
-      <h2>Welcome, Super Kid!</h2>
-      <p>You've been learning amazing things today about <strong>healthy eating</strong>, <strong>exercise</strong>, <strong>good habits</strong>, and <strong>saving money</strong>. Now let's see how much you remember! Pick a topic to quiz yourself — you've got this!</p>
+      <img src="pbjtp.webp" alt="PBJTP Logo" style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:4px solid var(--green);box-shadow:0 4px 20px rgba(0,0,0,0.2);margin-bottom:16px;display:block;margin-left:auto;margin-right:auto;">
+      <h2>Welcome, PBJTP Super Kid!</h2>
+      <p>You've been learning amazing things today at the <strong>Pete Brown Jr. Tennis Program</strong>! Let's test what you know about <strong>healthy eating</strong>, <strong>exercise</strong>, <strong>good habits</strong>, and <strong>saving money</strong>. Pick a topic below — you've got this! 💪</p>
     </div>
 
     <p class="categories-title">Pick a Topic to Start! ⬇️</p>
@@ -697,7 +734,7 @@
 
     <div class="all-btn-wrap">
       <button class="all-start-btn" onclick="startQuiz('all')">
-        🌈 Try ALL Topics Together! (40 Questions)
+        🎾 Try ALL Topics Together! (40 Questions)
       </button>
     </div>
 
@@ -740,6 +777,7 @@
 <div id="results-screen" class="screen">
   <div class="results-wrapper">
     <div class="results-hero">
+      <img src="pbjtp.webp" alt="PBJTP" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid var(--maroon);margin-bottom:12px;">
       <span class="results-emoji" id="results-emoji">🌟</span>
       <div class="results-title" id="results-title">Amazing Job!</div>
       <div class="results-subtitle" id="results-subtitle">You completed the quiz!</div>
